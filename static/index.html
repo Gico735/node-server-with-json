@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>index.html</title>
+</head>
+
+<body>
+  <form>
+    <input class='input' type="text">
+  </form>
+
+  <div class="response">
+
+  </div>
+
+  <script>
+
+    const input = document.querySelector('.input')
+    const response = document.querySelector('.response')
+
+    input.addEventListener('input', () => {
+      if (input.value === '') return
+      fetch(`/json?${input.value}`).then((res) => res.json())
+        .then(data => {
+          response.innerHTML = ''
+          data.forEach(el => {
+            response.innerHTML += el
+            response.innerHTML += ' '
+          })
+        })
+    })
+
+
+  </script>
+
+</body>
+
+</html>
