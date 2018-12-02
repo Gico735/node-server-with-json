@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Gico735/node-server-with-json/issues"
   },
-  "homepage": "https://github.com/Gico735/node-server-with-json#readme"
+  "homepage": "https://github.com/Gico735/node-server-with-json#readme",
+  "dependencies": {
+    "formidable": "^1.2.1"
+  }
 }

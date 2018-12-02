@@ -8,9 +8,17 @@
 </head>
 
 <body>
-  <form>
-    <input class='input' type="text">
+  <form action="file" method="post" enctype="multipart/form-data">
+    <div>
+      <label for="file">Choose file to upload</label>
+      <input type="file" name="file">
+    </div>
+    <div>
+      <button class="sumbit">Submit</button>
+    </div>
   </form>
+
+  <input class="input" type="text" >
 
   <div class="response">
 
@@ -20,6 +28,11 @@
 
     const input = document.querySelector('.input')
     const response = document.querySelector('.response')
+    const sumbit = document.querySelector('.sumbit')
+// <!-- 
+//     sumbit.addEventListener('click', (e) => {
+//       fetch(`/api`)
+//     }) -->
 
     input.addEventListener('input', () => {
       if (input.value === '') return
@@ -32,6 +45,7 @@
           })
         })
     })
+
 
 
   </script>
