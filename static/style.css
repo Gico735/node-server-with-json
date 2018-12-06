@@ -1,0 +1,10 @@
+section {
+  min-height: 100px;
+}
+
+.file {
+  background: rgb(128, 185, 187);
+}
+.text {
+  background: rgb(78, 105, 155);
+}

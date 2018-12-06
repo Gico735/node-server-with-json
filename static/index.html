@@ -4,51 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
   <title>index.html</title>
 </head>
 
 <body>
-  <form action="file" method="post" enctype="multipart/form-data">
-    <div>
-      <label for="file">Choose file to upload</label>
-      <input type="file" name="file">
-    </div>
-    <div>
-      <button class="sumbit">Submit</button>
-    </div>
-  </form>
 
-  <input class="input" type="text" >
+  <section class="file">
+    <form action="file" method="post" enctype="multipart/form-data">
+      <div>
+        <label for="file">Choose file to upload</label>
+        <input type="file" name="file">
+      </div>
+      <div>
+        <button class="sumbit">Submit</button>
+      </div>
+    </form>
 
-  <div class="response">
+    <div class="dataTable"></div>
+  </section>
 
+
+  <section class="text">
+    <input class="input" type="text">
+    <div class="response">
+  </section>
   </div>
 
-  <script>
-
-    const input = document.querySelector('.input')
-    const response = document.querySelector('.response')
-    const sumbit = document.querySelector('.sumbit')
-// <!-- 
-//     sumbit.addEventListener('click', (e) => {
-//       fetch(`/api`)
-//     }) -->
-
-    input.addEventListener('input', () => {
-      if (input.value === '') return
-      fetch(`/json?${input.value}`).then((res) => res.json())
-        .then(data => {
-          response.innerHTML = ''
-          data.forEach(el => {
-            response.innerHTML += el
-            response.innerHTML += ' '
-          })
-        })
-    })
-
-
-
-  </script>
+  <script src="script.js"></script>
 
 </body>
 
